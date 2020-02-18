@@ -3,7 +3,9 @@ exports.config = {
     specs: [
     //  "spec1.js",
     //  "spec2.js",
-         "actions.js"
+    //  "actions.js",
+    //  "frame.js",
+    "project_1/practice.js"
    ],
     capabilities: {
         'browserName': 'chrome',
