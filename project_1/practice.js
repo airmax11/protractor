@@ -10,6 +10,23 @@ describe('Project 1 practice', () => {
         })
     }
 
+    function totalSum(){
+
+        element.all(by.css('td:nth-of-type(4)>strong')).each(function(item){
+            
+            item.getText().then(function(text){
+                let x = Number((text.split(" "))[1].trim())
+                return x;
+
+                
+                
+            })
+            
+        })
+        
+        
+    }
+
 
     it('Open the page and test it', () => {
         browser.get("https://qaclickacademy.github.io/protocommerce/")
@@ -46,7 +63,19 @@ describe('Project 1 practice', () => {
             expect(res).toBe(2);
         });
 
-        element(by.class('tr td strong'));
+        element(by.partialLinkText('Checkout')).click().then(function(){browser.sleep(3000)});
+
+        const r = element.all(by.css('td:nth-of-type(4)>strong')).each(function(item){
+            
+            item.getText().then(function(text){
+                let x = Number((text.split(" "))[1].trim())
+                
+            })
+            
+        })
+
+        const txt = totalSum();
+        expect(txt).toBe(10000);
     });
 
 });
